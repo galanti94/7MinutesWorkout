@@ -1,5 +1,6 @@
 package com.guilhermegalanti.a7minutesworkout
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.FrameLayout
@@ -16,8 +17,8 @@ class MainActivity : AppCompatActivity() {
 
         //val flStartButton: FrameLayout = findViewById(R.id.flStart)
         binding?.flStart?.setOnClickListener{
-            Toast.makeText(this,
-                "Estou funcionando", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ExerciseActivity::class.java)
+            startActivity(intent)
         }
 
     }
@@ -25,7 +26,6 @@ class MainActivity : AppCompatActivity() {
     // Resetar a variável binding
     override fun onDestroy() {
         super.onDestroy()
-
         binding = null // Avoid memory leak
     }
 }
